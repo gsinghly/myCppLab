@@ -1,1 +1,1 @@
-This folder contains solutions to problems solved on Codeforces.
+This folder contains solution to problems solved from Codeforces.
