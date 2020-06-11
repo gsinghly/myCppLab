@@ -1,0 +1,1 @@
+DP practice only!!(1800 - 2400, medium, hard); SPOJ all dp level 5; ashishgup dp cf + uva,timus dp(standard variation)
