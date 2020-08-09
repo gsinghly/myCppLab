@@ -377,5 +377,26 @@ vector<int> Solution::prevSmaller(vector<int> &A) {
 
 ```
 
+### Rain Water Trapped
 
+
+```
+//used spaced; need to optimise on space
+int Solution::trap(const vector<int> &A) {
+    int left[A.size()] = {0}, right[A.size()] = {0};
+    left[0] = A[0];
+    right[A.size()-1] = A[A.size()-1];
+    for(int i = 1; i < A.size(); i++){
+        left[i] = max(left[i-1], A[i]);
+    }
+    for(int i = A.size()-2; i>= 0; i--){
+        right[i] = max(right[i+1], A[i]);
+    }
+    int ans = 0;
+    for(int i = 0 ; i < A.size(); i++){
+        ans += (min(left[i], right[i]) - A[i]);
+    }
+    return ans;
+}
+```
 
