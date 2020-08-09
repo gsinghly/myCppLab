@@ -1,5 +1,7 @@
 # My submissions on interviewbit .
 
+## Binary Search
+
 ### Matrix Median
 
 ```
@@ -306,6 +308,74 @@ double Solution::findMedianSortedArrays(const vector<int> &nums1, const vector<i
 ```
 
 ### Simple Queries
+
 ```
     TLE
 ```
+
+##  Stack
+
+### Evaluate Expression
+
+```
+int Solution::evalRPN(vector<string> &A) {
+    stack <int> s;
+    if(A.size() == 1){
+        return stoi(A[0]);
+    }
+    for(int i = 0; i < A.size(); i++){
+        if(A[i] == "+" || A[i] == "-" || A[i] == "*" || A[i] == "/"){
+            int d = s.top();
+            s.pop();
+            int c = s.top();
+            s.pop();
+            if(A[i] == "+")     c += d;
+            if(A[i] == "-")     c -= d;
+            if(A[i] == "*")     c *= d;
+            if(A[i] == "/")     c /= d;
+            s.push(c);
+        }
+        else{
+            int c = 0, f = 0;
+            if(A[i][0] == '-'){
+                f = 1;
+            }
+            for(int j = f; j < A[i].size(); j++){
+                c = c*10 + (A[i][j] - '0');
+            }
+            if(f){
+                c *= -1;
+            }
+            s.push(c);
+        }
+    }
+    return s.top();
+}
+
+```
+
+### Nearest Smaller Element
+
+```
+vector<int> Solution::prevSmaller(vector<int> &A) {
+    vector < int > ans;
+    stack < int > s;
+    for(int i = 0; i < A.size(); i++){
+        while(!s.empty() && A[i] <= A[s.top()]){
+            s.pop();
+        }
+        if(s.empty()){
+            ans.push_back(-1);
+        }
+        else{
+            ans.push_back(A[s.top()]);
+        }
+        s.push(i);
+    }
+    return ans;
+}
+
+```
+
+
+
