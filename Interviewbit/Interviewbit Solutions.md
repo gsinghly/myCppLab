@@ -398,6 +398,7 @@ int Solution::trap(const vector<int> &A) {
     }
     return ans;
 }
+
 ```
 
 
