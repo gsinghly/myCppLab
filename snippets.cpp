@@ -1,4 +1,4 @@
-### Power Mod (a^b)%c
+// Power Mod (a^b)%c
 
 ll power(ll a, ll b, ll c){
   ll ans = 1;
@@ -16,7 +16,7 @@ ll power(ll a, ll b, ll c){
 
 
 
-### Mul Mod (a*b)%c; a, b, c <= 1e18
+// Mul Mod (a*b)%c; a, b, c <= 1e18
 
 ll mulmod(ll a, ll b, ll c){
   if(b == 0)  return 0;
