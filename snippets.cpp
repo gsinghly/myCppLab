@@ -21,7 +21,7 @@ ll power(ll a, ll b, ll c){
 ll mulmod(ll a, ll b, ll c){
   if(b == 0)  return 0;
   ll s = mulmod(a, b/2, c);
-  if(b&1) return (a%c * 2*(s%c))%c;
+  if(b&1) return (a%c + 2*(s%c))%c;
   return (2*(s%c))%c;
 }
 
