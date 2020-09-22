@@ -73,3 +73,11 @@ FROM Person
 GROUP BY Email
 Having COUNT(Email) > 1;
 ```
+
+### Customers Who Never Order
+
+
+```
+SELECT Name as Customers FROM Customers
+WHERE Id NOT IN(SELECT CustomerId FROM Orders);
+```
